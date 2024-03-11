@@ -7,7 +7,7 @@ export default function Signup() {
 const data=Object.fromEntries(fd.entries());
 data.acquisition=acqua;
 console.log(data)
-
+event.target.reset();
   }
   return (
     <form onSubmit={handdleSubmit}>
@@ -96,7 +96,7 @@ console.log(data)
       </div>
 
       <p className="form-actions">
-        <button type="reset" className="button button-flat">
+        <button type="reset" className="button button-flat"> 
           Reset
         </button>
         <button type="submit" className="button">
