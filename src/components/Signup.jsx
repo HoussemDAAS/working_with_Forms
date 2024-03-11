@@ -7,7 +7,7 @@ export default function Signup() {
 const data=Object.fromEntries(fd.entries());
 data.acquisition=acqua;
 console.log(data)
-event.target.reset();
+
   }
   return (
     <form onSubmit={handdleSubmit}>
@@ -16,13 +16,13 @@ event.target.reset();
 
       <div className="control">
         <label htmlFor="email">Email</label>
-        <input id="email" type="email" name="email" />
+        <input id="email" type="email" name="email" required/>
       </div>
 
       <div className="control-row">
         <div className="control">
           <label htmlFor="password">Password</label>
-          <input id="password" type="password" name="password" />
+          <input id="password" type="password" name="password" required minLength={5} />
         </div>
 
         <div className="control">
