@@ -1,4 +1,7 @@
+import { useState } from "react";
 export default function Signup() {
+const [PasswordNotEqual, setPasswordNotEqual] = useState(false);
+
 
   const handdleSubmit = (event) => {
     event.preventDefault();
@@ -6,6 +9,10 @@ export default function Signup() {
    const acqua=fd.getAll('acquisition')
 const data=Object.fromEntries(fd.entries());
 data.acquisition=acqua;
+if(data.password!==data['confirm-password']){
+  setPasswordNotEqual(true);
+  return;
+}
 console.log(data)
 
   }
@@ -32,6 +39,7 @@ console.log(data)
             type="password"
             name="confirm-password"
           />
+          <div className="control-error">{PasswordNotEqual ? "Passwords don't match" : ""}</div>
         </div>
       </div>
 
